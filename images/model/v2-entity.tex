@@ -1,0 +1,12 @@
+\begin{tikzpicture}[->, >=stealth', node distance=2.5cm]
+    \node [draw, circle,font=\footnotesize] (n0) {$v_3$};
+    \node [draw, circle, above left of = n0,font=\footnotesize] (n1) {City};
+    \node [draw, circle, above right of = n0,font=\footnotesize] (n2) {Galway};
+    \node [draw, circle, below of = n0,font=\footnotesize] (n3) {$v_6$};
+
+    \path[every node/.style={fill=white,font=\scriptsize}]
+        (n0) edge node {label} (n2)
+        (n0) edge node {location} (n3)
+        (n0) edge node {type} (n1);
+\end{tikzpicture}
+%% vim: et:sw=4

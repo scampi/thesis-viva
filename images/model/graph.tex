@@ -1,0 +1,58 @@
+\begin{tikzpicture}[->,>=stealth',node distance=3.5cm]
+    \node [draw,circle] (n0) {$v_0$};
+    \node [draw,circle,above of = n0] (effi) {Effi\ldots};
+    \node [red,draw,circle,right of = n0] (n2) {$v_1$};
+    \node [draw,circle,below of = n2,yshift=-1cm] (n1) {$v_2$};
+    \node [blue,draw,circle,right of = n2] (n3) {$v_3$};
+    \node [draw,circle,right of = n3] (n6) {$v_6$};
+    \node [draw,circle,below of = n6,yshift=-1cm] (n4) {$v_4$};
+    \node [draw,circle,below of = n2,yshift=1.25cm] (person) {Person};
+    \node [draw,circle,below of = n1] (ren) {Renaud};
+    \node [draw,circle,above of = n2] (ste) {St\'ephane};
+    \node [draw,circle,right of = n4] (n5) {$v_5$};
+    \node [draw,circle,right of = n6] (n7) {$v_7$};
+    \node [draw,circle,above right of = n4,xshift=-.7cm] (place) {Place};
+    \node [draw,circle,above of = n7,yshift=0cm] (country) {Country};
+    \node [draw,circle,below of = n4] (deri) {DERI};
+    \node [draw,circle,below of = n5] (fbk) {FBK};
+    \node [draw,circle,above left of = n3,xshift=1cm] (city) {City};
+    \node [draw,circle,above right of = n3,xshift=-1cm] (gal) {Galway};
+    \node [draw,circle,right of = n7] (rome) {Rome};
+    \node [draw,circle,above of = n6] (ire) {Ireland};
+
+    \path
+        (n7) edge node[fill=white] {capital} (rome)
+        (n6) edge node[fill=white] {label} (ire)
+
+        (n3) edge node[fill=white] {label} (gal)
+        (n3) edge node[fill=white] {type} (city)
+
+        (n4) edge node[fill=white] {label} (deri)
+        (n5) edge node[fill=white] {label} (fbk)
+
+        (n6) edge node[fill=white] {type} (country)
+        (n7) edge node[fill=white] {type} (country)
+
+        (n4) edge node[fill=white] {type} (place)
+        (n5) edge node[fill=white] {type} (place)
+        (n6) edge node[fill=white] {type} (place)
+        (n7) edge node[fill=white] {type} (place)
+
+        (n3) edge node[fill=white] {location} (n6)
+        (n4) edge node[fill=white] {location} (n6)
+        (n5) edge node[fill=white] {location} (n7)
+        (n1) edge node[fill=white] {name} (ren)
+        (n2) edge node[fill=white] {name} (ste)
+        (n1) edge node[fill=white] {type} (person)
+        (n2) edge node[fill=white] {type} (person)
+        (n0) edge node[fill=white] {title} (effi)
+        (n0) edge[bend right] node[fill=white] {creator} (n2)
+        (n0) edge[bend left] node[fill=white] {author} (n2)
+        (n0) edge node[fill=white] {author} (n1)
+        (n1) edge node[fill=white] {lives} (n3)
+        (n1) edge node[fill=white] {works} (n4)
+        (n2) edge node[fill=white] {lives} (n3)
+        (n2) edge[near end] node[fill=white] {works} (n4)
+    ;
+\end{tikzpicture}
+%% vim: et:sw=4

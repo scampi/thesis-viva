@@ -1,0 +1,171 @@
+\section{Precision Model}
+
+\subsection{Overview}
+
+\frame{
+    \frametitle{Loss of Precision with the Types Summary}
+    \begin{columns}[c]
+        \column{.6\textwidth}
+        \begin{figure}
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/precision/graph}
+            }
+            \caption{An entity graph describing people, places, and their relationships.}
+        \end{figure}
+
+        \column{.4\textwidth}
+        \begin{figure}
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/precision/classes}
+            }
+            \caption{Types summary of the entity graph.}
+        \end{figure}
+    \end{columns}
+}
+
+\subsection{Model}
+
+\frame{
+    \frametitle{Ordering of Graph Summaries}
+    \vspace{2em}
+    \begin{block}{Partial Relation}
+        \begin{figure}
+            \centering
+            \resizebox{.6\textwidth}{!}{
+                \input{images/precision/lattice-partial-order}
+            }
+        \end{figure}
+    \end{block}
+    \vspace{-2em}
+    \uncover<3->{
+        \begin{block}{Graph Lattice}
+            \begin{figure}
+                \centering
+                \resizebox{.8\textwidth}{!}{
+                    \input{images/precision/lattice}
+                }
+            \end{figure}
+        \end{block}
+    }
+}
+
+\frame{
+    \frametitle{Model}
+    \begin{block}{Comparison}
+        \begin{itemize}
+            \item Leverage the partial relation for ordering the summaries
+            \item Compare a summary against the original graph
+            \item Compute how many errors the summarisation committed
+        \end{itemize}
+    \end{block}
+    \begin{block}{Error Classification}
+        \begin{itemize}
+            \item Connectivity
+            \item Attribute and type
+        \end{itemize}
+    \end{block}
+}
+
+\frame{
+    \frametitle{An Example:\\Evaluation of the Summary Precision}
+    \begin{columns}[c]
+        \column{.6\textwidth}
+        \begin{figure}
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/precision/graph-as-numbers}
+            }
+        \end{figure}
+
+        \column{.4\textwidth}
+        \begin{figure}
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/precision/classes-as-numbers}
+            }
+        \end{figure}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{An Example:\\Evaluation of the Summary Precision}
+    \resizebox{\textwidth}{!}{
+        \input{color-codes}
+    }
+    \vspace{.25em}
+    \begin{columns}[c]
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{graph-precision}
+        }
+
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{classes-precision}
+        }
+    \end{columns}
+}
+
+\frame{
+    \frametitle{An Example:\\Evaluation of the Summary Precision}
+    \resizebox{\textwidth}{!}{
+        \input{color-codes}
+    }
+    \vspace{.25em}
+    \begin{columns}[c]
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{graph-precision}
+        }
+
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{images/precision/inferred-graph-matrix}
+        }
+    \end{columns}
+}
+
+\frame{
+    \frametitle{An Example:\\Evaluation of the Summary Precision}
+    \resizebox{\textwidth}{!}{
+        \input{color-codes}
+    }
+    \vspace{.25em}
+    \begin{columns}[c]
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{graph-precision}
+        }
+
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{images/precision/inferred-graph-matrix-ordered}
+        }
+    \end{columns}
+}
+
+\frame{
+    \frametitle{An Example:\\Evaluation of the Summary Precision}
+    \resizebox{\textwidth}{!}{
+        \input{color-codes}
+    }
+    \vspace{.25em}
+    \begin{columns}[c]
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{images/precision/error-graph-matrix}
+        }
+
+        \column{.5\textwidth}
+        \resizebox{\textwidth}{!}{
+            \input{images/precision/error-graph}
+        }
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Errors Classification}
+}
+%% vim: et:sw=4

@@ -1,0 +1,83 @@
+\setbeamercovered{invisible}
+\begin{tikzpicture}[->,>=stealth',node distance=2.25cm]
+    \node [draw,circle] (1) {1};
+    \node [draw,circle,below left of = 1] (2) {2};
+    \node [draw,circle,below right of = 1] (3) {3};
+    \node [draw,circle,above of = 1] (4) {4};
+
+    \node [draw,circle,right of = 1,xshift=2cm,yshift=-1cm] (a) {a};
+    \node [draw,circle,above of = a] (b) {b};
+
+    % first edge
+    \uncover<2-3>{
+        \path[red highlight edge]
+            (2) edge (1)
+            ;
+        \node [draw,circle, red highlight node] (1) {1};
+        \node [draw,circle,below left of = 1, red highlight node] (2) {2};
+    }
+    \uncover<3-3>{
+        \path[green highlight edge]
+            (1) edge (b)
+            (2) edge [bend left=10] (a)
+            ;
+        \path[red highlight edge]
+            (b) edge (a)
+            ;
+        \node [red highlight node, draw,circle,right of = 1,xshift=2cm,yshift=-1cm] (a) {a};
+        \node [red highlight node, draw,circle,above of = a] (b) {b};
+    }
+
+    % second edge
+    \uncover<4-5>{
+        \path[red highlight edge]
+            (3) edge (1)
+            ;
+        \node [draw,circle, red highlight node] (1) {1};
+        \node [draw,circle,below right of = 1, red highlight node] (3) {3};
+    }
+    \uncover<5-5>{
+        \path[green highlight edge]
+            (1) edge (b)
+            (3) edge (a)
+            ;
+        \path[red highlight edge]
+            (b) edge (a)
+            ;
+        \node [red highlight node, draw,circle,right of = 1,xshift=2cm,yshift=-1cm] (a) {a};
+        \node [red highlight node, draw,circle,above of = a] (b) {b};
+    }
+
+    % third edge
+    \uncover<6-7>{
+        \path[red highlight edge]
+            (1) edge (4)
+            ;
+        \node [draw,circle, red highlight node] (1) {1};
+        \node [draw,circle,above of = 1, red highlight node] (4) {4};
+    }
+    \uncover<7-7>{
+        \path[green highlight edge]
+            (1) edge (b)
+            (4) edge (b)
+            ;
+        \path[red highlight edge]
+            (b) edge[loop] (b)
+            ;
+        \node [red highlight node, draw,circle,above of = a] (b) {b};
+    }
+
+    \path[every node/.style={fill=white,font=\footnotesize}]
+        (1) edge[->] (4)
+        (2) edge (1)
+        (3) edge (1)
+        (a) edge (b)
+        (b) edge[loop] (b)
+        (1) edge [dotted] node {$R$} (b)
+        (4) edge [dotted] node {$R$} (b)
+        (2) edge [dotted,bend left=10] node[near start] {$R$} (a)
+        (3) edge [dotted] node {$R$} (a);
+
+\end{tikzpicture}
+\setbeamercovered{transparent}
+%% vim: et:sw=4

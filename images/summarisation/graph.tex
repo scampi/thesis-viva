@@ -1,0 +1,114 @@
+\setbeamercovered{invisible}
+\begin{tikzpicture}[->,>=stealth',node distance=3.5cm]
+    \node [draw,circle] (n2) {$v_1$};
+    \node [draw,circle,below of = n2,yshift=-1cm] (n1) {$v_2$};
+    \node [draw,circle,right of = n2] (n3) {$v_3$};
+    \node [draw,circle,right of = n3] (n6) {$v_6$};
+    \node [draw,circle,below of = n6,yshift=-1cm] (n4) {$v_4$};
+    \node [draw,circle,below of = n2,yshift=1.25cm] (person) {Person};
+    \node [draw,circle,below of = n1] (ren) {Renaud};
+    \node [draw,circle,above of = n2] (ste) {St\'ephane};
+    \node [draw,circle,right of = n4] (n5) {$v_5$};
+    \node [draw,circle,right of = n6] (n7) {$v_7$};
+    \node [draw,circle,above right of = n4,xshift=-.7cm] (place) {Place};
+    \node [draw,circle,above of = n7,yshift=0cm] (country) {Country};
+    \node [draw,circle,below of = n4] (deri) {DERI};
+    \node [draw,circle,below of = n5] (fbk) {FBK};
+    \node [draw,circle,above left of = n3,xshift=1cm] (city) {City};
+    \node [draw,circle,above right of = n3,xshift=-1cm] (gal) {Galway};
+    \node [draw,circle,above right of = n7] (rome) {Rome};
+    \node [draw,circle,above of = n6] (ire) {Ireland};
+
+    \uncover<2-2>{
+        \node [draw,circle,below of = n2,yshift=1.25cm, green highlight node] (person) {Person};
+        \path[green highlight edge]
+            (person) edge (n2) edge (n1)
+            ;
+        \node [draw,circle, red highlight node] (n2) {$v_1$};
+        \node [draw,circle,below of = n2,yshift=-1cm, red highlight node] (n1) {$v_2$};
+    }
+
+    \uncover<3-3>{
+        \node [draw,circle,above left of = n3,xshift=1cm, green highlight node] (city) {City};
+        \path[green highlight edge]
+            (n3) edge (city)
+            ;
+        \node [draw,circle,right of = n2, red highlight node] (n3) {$v_3$};
+    }
+
+    \uncover<4-4>{
+        \node [draw,circle,above right of = n4,xshift=-.7cm, green highlight node] (place) {Place};
+        \path[green highlight edge]
+            (n4) edge (place)
+            (n5) edge (place)
+            ;
+        \node [draw,circle,below of = n6,yshift=-1cm, red highlight node] (n4) {$v_4$};
+        \node [draw,circle,right of = n4, red highlight node] (n5) {$v_5$};
+    }
+
+    \uncover<5-5>{
+        \node [draw,circle,above of = n7,yshift=0cm, green highlight node] (country) {Country};
+        \node [draw,circle,above right of = n4,xshift=-.7cm, green highlight node] (place) {Place};
+        \path[green highlight edge]
+            (place) edge (n6) edge (n7)
+            (country) edge (n6) edge (n7)
+            ;
+        \node [draw,circle,right of = n3, red highlight node] (n6) {$v_6$};
+        \node [draw,circle,right of = n6, red highlight node] (n7) {$v_7$};
+    }
+
+    \uncover<6-6>{
+        \node [draw,circle,below of = n1, red highlight node] (ren) {Renaud};
+        \node [draw,circle,above of = n2, red highlight node] (ste) {St\'ephane};
+        \node [draw,circle,below of = n4, red highlight node] (deri) {DERI};
+        \node [draw,circle,below of = n5, red highlight node] (fbk) {FBK};
+        \node [draw,circle,above right of = n3,xshift=-1cm, red highlight node] (gal) {Galway};
+        \node [draw,circle,above right of = n7, red highlight node] (rome) {Rome};
+        \node [draw,circle,above of = n6, red highlight node] (ire) {Ireland};
+    }
+
+    \uncover<7-7>{
+        \node [draw,circle, red highlight node] (n2) {$v_1$};
+        \node [draw,circle,above of = n2, red highlight node] (ste) {St\'ephane};
+        \draw [red highlight edge] (n2) edge node[fill=white] {name} (ste);
+    }
+
+    \uncover<8-8>{
+        \node [draw,circle, red highlight node] (n2) {$v_1$};
+        \node [draw,circle, red highlight node] (n2) {$v_1$};
+        \draw [red highlight edge] (n2) edge node[fill=white] {lives} (n3);
+    }
+
+    \path
+        (n7) edge node[fill=white] {capital} (rome)
+        (n6) edge node[fill=white] {label} (ire)
+
+        (n3) edge node[fill=white] {label} (gal)
+        (n3) edge node[fill=white] {type} (city)
+
+        (n4) edge node[fill=white] {label} (deri)
+        (n5) edge node[fill=white] {label} (fbk)
+
+        (n6) edge node[fill=white] {type} (country)
+        (n7) edge node[fill=white] {type} (country)
+
+        (n4) edge node[fill=white] {type} (place)
+        (n5) edge node[fill=white] {type} (place)
+        (n6) edge node[fill=white] {type} (place)
+        (n7) edge node[fill=white] {type} (place)
+
+        (n3) edge node[fill=white] {location} (n6)
+        (n4) edge node[fill=white] {location} (n6)
+        (n5) edge node[fill=white] {location} (n7)
+        (n1) edge node[fill=white] {name} (ren)
+        (n2) edge node[fill=white] {name} (ste)
+        (n1) edge node[fill=white] {type} (person)
+        (n2) edge node[fill=white] {type} (person)
+        (n1) edge node[fill=white] {lives} (n3)
+        (n1) edge node[fill=white] {works} (n4)
+        (n2) edge node[fill=white] {lives} (n3)
+        (n2) edge[near end] node[fill=white] {works} (n4)
+    ;
+\end{tikzpicture}
+\setbeamercovered{transparent}
+%% vim: et:sw=4

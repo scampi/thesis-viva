@@ -1,0 +1,26 @@
+\begin{tikzpicture}[->, >=stealth', node distance=2.5cm]
+\node[draw, circle] (n0) {$v_0$};
+\node[draw, circle, below of = n0] (n01) {Person};
+\node[draw, circle, above of = n0] (n02) {Alice};
+
+\node[draw, circle, right of = n0] (n1) {$v_1$};
+\node[draw, circle, below of = n1] (n11) {Person};
+\node[draw, circle, above of = n1] (n12) {Bob};
+
+\node[draw, circle, right of = n1] (nn) {$v_n$};
+\node[draw, circle, below of = nn] (nn1) {Person};
+\node[draw, circle, above of = nn] (nn2) {Zed};
+
+\path[every node/.style={fill=white,font=\footnotesize}]
+  (n0) edge node {name} (n02)
+  (n0) edge node {type} (n01)
+
+  (n1) edge node {name} (n12)
+  (n1) edge node {type} (n11)
+
+  (nn) edge node {name} (nn2)
+  (nn) edge node {type} (nn1)
+  (nn) edge[dotted, thick,-] (n1)
+;
+\end{tikzpicture}
+%% vim: et:sw=4

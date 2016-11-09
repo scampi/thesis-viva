@@ -1,0 +1,11 @@
+\begin{tikzpicture}[->, >=stealth', node distance=2.5cm]
+\node[draw, circle] (n0) {$u_0$};
+\node[draw, circle, below of = n0] (n01) {Person};
+\node[draw, circle, above of = n0] (n02) {$*$};
+
+\path[every node/.style={fill=white,font=\footnotesize}]
+  (n0) edge node {name} (n02)
+  (n0) edge node {type} (n01)
+;
+\end{tikzpicture}
+%% vim: et:sw=4

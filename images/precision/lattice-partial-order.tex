@@ -1,0 +1,17 @@
+\setbeamercovered{invisible}
+\begin{tikzpicture}[->,>=stealth',node distance=3cm]
+    \node (g) {$G$};
+    \node[right of = g] (g1) {$\mathcal{S}_1$};
+    \node[right of = g1] (g2) {$\mathcal{S}_2$};
+
+    \uncover<2->{
+        \draw[red] (g1) edge node[red,above] {$R_3$} (g2);
+    }
+
+    \path
+        (g) edge node[above] {$R_1$} (g1)
+        (g) edge [bend right=20] node[below] {$R_2$} (g2)
+        ;
+\end{tikzpicture}
+\setbeamercovered{transparent}
+%% vim: et:sw=4

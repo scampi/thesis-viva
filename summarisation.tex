@@ -1,0 +1,158 @@
+\section{Graph Summarisation}
+
+\subsection{Overview}
+
+\frame{
+    \frametitle{Overview}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{.5\textwidth}
+            \centering
+            \resizebox{\textwidth}{!}{
+                \input{images/summarisation/entity-graphs}
+            }
+            \caption{An entity graph about people}
+        \end{subfigure}
+        \qquad
+        \begin{subfigure}[b]{.4\textwidth}
+            \centering
+            \resizebox{.35\textwidth}{!}{
+                \input{images/summarisation/entity-graphs-summary}
+            }
+            \caption{A possible summary}
+        \end{subfigure}
+        \caption{Summarising an entity graph}
+    \end{figure}
+}
+
+\subsection{Model}
+
+\frame[plain]{
+    \frametitle{Graph Summary}
+    \begin{definition}
+        A graph is the \textbf{summary} of another graph if there is a \textbf{homomorphism} from the \emph{latter} to the \emph{former} with respect to a \textbf{relation}.
+    \end{definition}
+    \hfill\begin{minipage}{\dimexpr\textwidth-1cm}
+        \begin{block}{Summarisation Relation}
+            \begin{itemize}
+                \item Mapping between the nodes of two graphs, based on \emph{features} of the graph
+            \end{itemize}
+        \end{block}
+        \begin{block}{Graph Homomorphism}
+            \begin{itemize}
+                \item With respect to the summarisation relation, each edge of the graph is mapped to an edge(s) of the summary
+            \end{itemize}
+        \end{block}
+    \end{minipage}
+}
+
+\frame{
+    \frametitle{Graph Homomorphism}
+    \begin{columns}[c]
+        \column{.45\textwidth}
+        \begin{definition}
+            A graph is homomorphic to another if all of its edges do exist in that other graph for a given relation.
+        \end{definition}
+
+        \column{.6\textwidth}
+        \begin{example}
+            \begin{figure}
+                \centering
+                \resizebox{\textwidth}{!}{
+                    \input{images/summarisation/homomorphism}
+                }
+            \end{figure}
+        \end{example}
+    \end{columns}
+}
+
+\subsection{Precise Graph Summary}
+
+\frame{
+    \frametitle{Precise Graph Summary}
+    \begin{columns}[c]
+        \column{.55\textwidth}
+        \begin{block}{Inevitability of Precision Loss}
+            \begin{itemize}
+                \item A summary is precise if every path in the graph do exist
+                \item Creating such a summary is impractical due to the data's heterogeneity
+            \end{itemize}
+        \end{block}
+
+        \column{.5\textwidth}
+        \begin{figure}
+            \centering
+            \resizebox{\textwidth}{!}{
+                \input{images/summarisation/ontology-distribution}
+            }
+            \caption{Ontology probability distribution}
+        \end{figure}
+    \end{columns}
+}
+
+\subsection{Approximate Graph Summaries}
+
+\frame{
+    \frametitle{Approximate Graph Summaries}
+    \begin{block}{Why approximate a summary ?}
+        \begin{itemize}
+            \item Web Data is too heterogeneous for its structure to be captured perfectly
+            \item Summarisation needs to scale to large graphs
+        \end{itemize}
+    \end{block}
+    \begin{block}{Features}
+        \begin{itemize}
+            \item Types
+            \item Attributes (incoming and/or outgoing)
+        \end{itemize} 
+    \end{block}
+
+    %\uncover<2->{
+        %\begin{block}{Studied Summaries}
+            %\begin{columns}[c]
+                %\column{.5\textwidth}
+                %\begin{itemize}
+                    %\item Unique Type Summary
+                    %\item Types Summary
+                    %\item Attributes Summary
+                %\end{itemize} 
+
+                %\column{.6\textwidth}
+                %\begin{itemize}
+                    %\item Types \& Attributes Summary
+                    %\item IO Attributes Summary
+                    %\item IO Attributes Types Summary
+                %\end{itemize} 
+            %\end{columns}
+        %\end{block}
+    %}
+}
+
+\frame[shrink]{
+    \frametitle{Example: Types Summary}
+    \vspace{2em}
+    \begin{description}
+        \item[Relation:] set of types associated to a node
+    \end{description}
+    \vspace{-1em}
+    \begin{columns}[c]
+        \column{.6\textwidth}
+        \begin{figure}[b]
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/summarisation/graph}
+            }
+            \caption{An entity graph describing people, places, and their relationships.}
+        \end{figure}
+
+        \column{.4\textwidth}
+        \begin{figure}[b]
+            \centering
+            \resizebox{.9\textwidth}{!}{
+                \input{images/summarisation/classes}
+            }
+            \caption{Types summary of the entity graph.}
+        \end{figure}
+    \end{columns}
+}
+%% vim: et:sw=4

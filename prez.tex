@@ -1,0 +1,170 @@
+\documentclass{beamer}
+
+%\mode<presentation>
+%{
+ %\usetheme[navigation=true]{DERI}
+ %\setbeamercovered{transparent}
+ %\beamertemplateballitem
+%}
+%\usepackage{beamerthemeDERI}
+
+\usepackage{beamerthemeinsight/insight}
+\setbeamercovered{transparent}
+
+\usepackage[medium]{ubuntu}
+
+% Switch implementation
+\usepackage{xifthen}
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+
+\usepackage{url}
+
+\usepackage{multicol}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[french]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,shapes,arrows,positioning,shapes.geometric,calc,arrows.meta,fadings,decorations.markings,decorations.shapes}
+
+\tikzset{red highlight node/.style={fill=red!24}}
+\tikzset{green highlight node/.style={fill=green!24}}
+\tikzset{red highlight edge/.style={draw,line width=5pt,-,red!50}}
+\tikzset{green highlight edge/.style={draw,line width=5pt,-,green!50}}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+
+% Matrix
+\usepackage{pgfplotstable}
+\newcommand{\Size}{1cm}% Adjust size of square as desired
+\tikzset{Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=white,
+        align=center
+    }
+}
+\tikzset{Red Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=red,
+        align=center
+    }
+}
+\tikzset{Blue Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=blue,
+        align=center
+    }
+}
+\tikzset{Orange Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=orange,
+        align=center
+    }
+}
+\tikzset{Green Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=black!30!green,
+        align=center
+    }
+}
+\tikzset{Black Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=black,
+        align=center
+    }
+}
+\tikzset{Magenta Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=magenta,
+        align=center
+    }
+}
+\tikzset{Brown Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=brown,
+        align=center
+    }
+}
+\tikzset{Magenta Brown Square/.style={
+        inner sep=0pt,
+        text width=\Size, 
+        minimum size=\Size,
+        draw=black,
+        fill=brown,
+        align=center,
+        postaction={
+            pattern=north west lines,
+            pattern color=magenta
+        }
+    }
+}
+
+\title{Making Sense of Web Data}
+\author{St\'ephane Campinas}
+\institute{
+    Insight Centre for Data Analytics\\
+    National University of Ireland, Galway
+}
+\date{Thesis VIVA, 13 December 2016}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{
+    \frametitle{Table of Contents}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+}
+
+\input{introduction}
+
+\AtBeginSection[]
+{
+    \frame{
+        \frametitle{Table of Contents}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection]
+        \end{multicols}
+    }
+}
+
+\input{model}
+
+\input{summarisation}
+
+\input{precision}
+
+\end{document}
+%% vim: et:sw=4
