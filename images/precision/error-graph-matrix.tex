@@ -10,59 +10,185 @@
 %location = 6 = black!30!green
 %works = 7 = black
 
+\setbeamercovered{invisible}
 \begin{tikzpicture}[draw=black, ultra thick]
-    \foreach \col in {0,...,\rows} {%
-        \foreach \row in {0,...,\rows} {%
-            \ifthenelse{\row=0 \AND \col=0}{
-                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-            }
-            {
-                \ifthenelse{\row=0}{
-                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\col};
+    \uncover<1-1>{
+        \foreach \col in {0,...,\rows} {%
+            \foreach \row in {0,...,\rows} {%
+                \ifthenelse{\row=0 \AND \col=0}{
+                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
                 }
                 {
-                    \ifthenelse{\col=0}{
-                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\row};
+                    \ifthenelse{\row=0}{
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\col};
                     }
                     {
-                        \pgfmathsetmacro{\x}{int(\row-1)}
-                        \pgfmathsetmacro{\y}{int(\col-1)}
+                        \ifthenelse{\col=0}{
+                            \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\row};
+                        }
+                        {
+                            \pgfmathsetmacro{\x}{int(\row-1)}
+                            \pgfmathsetmacro{\y}{int(\col-1)}
 
-                        \pgfplotstablegetelem{\x}{\y}\of{\graph} 
+                            \pgfplotstablegetelem{\x}{\y}\of{\graph} 
 
-                        \begin{switch}{\pgfplotsretval}
-                            \case{0}{
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{1}{
-                                \node [Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{2}{
-                                \node [Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{3}{
-                                \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{4}{
-                                \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{5}{
-                                \node [Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{6}{
-                                \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{7}{
-                                \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{8}{
-                                \node [Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                        \end{switch}
+                            \begin{switch}{\pgfplotsretval}
+                                \case{0}{
+                                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{1}{
+                                    \node [Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{2}{
+                                    \node [Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{3}{
+                                    \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{4}{
+                                    \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{5}{
+                                    \node [Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{6}{
+                                    \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{7}{
+                                    \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{8}{
+                                    \node [Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                            \end{switch}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    \uncover<2-2>{
+        \foreach \col in {0,...,\rows} {%
+            \foreach \row in {0,...,\rows} {%
+                \ifthenelse{\row=0 \AND \col=0}{
+                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                }
+                {
+                    \ifthenelse{\row=0}{
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\col};
+                    }
+                    {
+                        \ifthenelse{\col=0}{
+                            \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\row};
+                        }
+                        {
+                            \pgfmathsetmacro{\x}{int(\row-1)}
+                            \pgfmathsetmacro{\y}{int(\col-1)}
+
+                            \pgfplotstablegetelem{\x}{\y}\of{\graph} 
+
+                            \begin{switch}{\pgfplotsretval}
+                                \case{0}{
+                                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{1}{
+                                    \node [Dim Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{2}{
+                                    \node [Dim Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{3}{
+                                    \ifthenelse{\row=10 \AND \col=6}{
+                                        \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                    {
+                                        \node [Dim Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                }
+                                \case{4}{
+                                    \node [Dim Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{5}{
+                                    \node [Dim Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{6}{
+                                    \node [Dim Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{7}{
+                                    \node [Dim Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{8}{
+                                    \node [Dim Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                            \end{switch}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    \uncover<3-3>{
+        \foreach \col in {0,...,\rows} {%
+            \foreach \row in {0,...,\rows} {%
+                \ifthenelse{\row=0 \AND \col=0}{
+                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                }
+                {
+                    \ifthenelse{\row=0}{
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\col};
+                    }
+                    {
+                        \ifthenelse{\col=0}{
+                            \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\row};
+                        }
+                        {
+                            \pgfmathsetmacro{\x}{int(\row-1)}
+                            \pgfmathsetmacro{\y}{int(\col-1)}
+
+                            \pgfplotstablegetelem{\x}{\y}\of{\graph} 
+
+                            \begin{switch}{\pgfplotsretval}
+                                \case{0}{
+                                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{1}{
+                                    \node [Dim Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{2}{
+                                    \node [Dim Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{3}{
+                                    \node [Dim Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{4}{
+                                    \node [Dim Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{5}{
+                                    \node [Dim Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{6}{
+                                    \ifthenelse{\row=8 \AND \col=10}{
+                                        \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                    {
+                                        \node [Dim Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                }
+                                \case{7}{
+                                    \node [Dim Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{8}{
+                                    \node [Dim Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                            \end{switch}
+                        }
                     }
                 }
             }
         }
     }
 \end{tikzpicture}
+\setbeamercovered{transparent}
 %% vim: et:sw=4

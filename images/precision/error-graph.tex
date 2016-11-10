@@ -1,4 +1,4 @@
-%\setbeamercovered{invisible}
+\setbeamercovered{invisible}
 \begin{tikzpicture}[->,>=stealth',node distance=3.5cm]
     \node [draw,circle] (n2) {7};
     \node [draw,circle,below of = n2,yshift=-1cm] (n1) {13};
@@ -18,6 +18,14 @@
     \node [draw,circle,above right of = n3,xshift=-1cm] (gal) {3};
     \node [draw,circle,above right of = n7] (rome) {6};
     \node [draw,circle,above of = n6] (ire) {4};
+
+    \uncover<2-2>{
+        \draw [brown,line width=5pt,bend right=45] (n7) edge (rome);
+    }
+
+    \uncover<3-3>{
+        \draw [black!30!green,line width=5pt,bend left] (n3) edge (n7);
+    }
 
     \path
         (n7) edge node[fill=white] {capital} (rome)
@@ -50,5 +58,5 @@
         (n2) edge[near end] node[fill=white] {works} (n4)
         ;
 \end{tikzpicture}
-%\setbeamercovered{transparent}
+\setbeamercovered{transparent}
 % vim: et:sw=4
