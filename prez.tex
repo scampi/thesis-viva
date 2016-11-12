@@ -13,6 +13,15 @@
 
 \usepackage[medium]{ubuntu}
 
+% Make the text wider on a frame
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
 % Switch implementation
 \usepackage{xifthen}
 \newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}

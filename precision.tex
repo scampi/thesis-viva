@@ -176,8 +176,49 @@
     \end{block}
     \begin{block}{Precision Measure}
         \begin{itemize}
-            \item Based on the set of \textbf{true} and \textbf{false} positives edges
+            \item Based on the set of \textbf{true} (TP) and \textbf{false} (FP) positives edges:
+                \begin{equation*}
+                    Prec(R, x) = \frac{\vert TP(x) \vert}{\vert TP(x) \bigcup FP(R, x) \vert}
+                \end{equation*}
         \end{itemize} 
     \end{block}
+}
+
+\subsection{Evaluation}
+
+\frame[shrink]{
+    \frametitle{Evaluation Dimensions}
+    \vspace{2em}
+    \Wider{
+        \begin{block}{How small the summary is compared to the original graph ?}
+            Ratio of order and size of the graph $G$ to the summary $\mathcal{S}$:
+
+            $$
+            G:\mathcal{S} = \frac{\vert V \vert + \vert A \vert}{\vert \mathcal{W} \vert + \vert \mathcal{B} \vert}
+            $$
+        \end{block}
+        \begin{block}{How performant and scalable is the summarization process ?}
+            Record of the time spent on the process
+        \end{block}
+        \begin{block}{How precise is the generated summary ?}
+            Average precision of the summary:
+
+            $$
+            \frac{1}{\vert \mathcal{W}_{fbt} \vert} \times \sum_{c \in \mathcal{W}}{\frac{1}{\vert C(c) \vert} \times \sum_{x \in C(c)}{Prec(R, x)}}
+            $$
+        \end{block}
+    }
+}
+
+\frame{
+    \frametitle{Datasets}
+    \vspace{.3cm}
+    \begin{columns}[c]
+        \column{.5\textwidth}
+        \input{images/precision/datasets-types-attributes}
+
+        \column{.5\textwidth}
+        \input{images/precision/datasets-nodes-edges}
+    \end{columns}
 }
 %% vim: et:sw=4
