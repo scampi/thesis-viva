@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            scatter/classes={
+                a={mark=square},%
+                b={mark=star},%
+                c={mark=oplus},%
+                d={mark=o},%
+                e={mark=triangle},%
+                f={mark=pentagon}
+            },
+            ylabel=$Connectivity$,
+            xlabel=$Compression \; Ratio$,
+            mark options={scale=2},
+            legend style={at={(.95,0.9)}}
+        ]
+        \addplot[scatter,only marks,scatter src=explicit symbolic]
+            coordinates {
+                (247305.94, 0.14856667) [a]
+                (150252.41, 0.2356) [b]
+                (1433.53, 0.2736) [c]
+                (1314.50, 0.4238) [d]
+                (1268.24, 0.51803333) [e]
+                (1184.26, 0.64733333) [f]
+            };
+        \legend{$R_{ut}$, $R_{t}$, $R_{a}$, $R_{at}$, $R_{ioa}$, $R_{ioat}$}
+    \end{axis}
+    \uncover<2->{
+        \draw[red,ultra thick] (.2,5.5) rectangle (1,1.2);
+        \draw[blue,ultra thick] (3.6,1.7) rectangle (6.6,.2);
+    }
+    \uncover<3-4>{
+        \draw[draw=none,pattern=north west lines,pattern color=red,ultra thick] (.2,2.1) rectangle (1,1.2);
+        \draw[draw=none,pattern=north east lines,pattern color=blue,ultra thick] (3.6,1.7) rectangle (4.6,1);
+    }
+    \uncover<4-4>{
+        \draw[draw=none,pattern=north west lines,pattern color=red,ultra thick] (.2,3.5) rectangle (1,2.8);
+        \draw[draw=none,pattern=north east lines,pattern color=blue,ultra thick] (.2,3.5) rectangle (1,2.8);
+    }
+    \uncover<5-5>{
+        \draw[draw=none,pattern=dots,pattern color=black!50!green,ultra thick] (.2,5.5) rectangle (1,3.7);
+    }
+\end{tikzpicture}
+%% vim: et:sw=4

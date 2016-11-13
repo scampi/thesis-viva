@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        grid=both,
+        scatter/classes={
+            a={mark=square},%
+            b={mark=star},%
+            c={mark=oplus},%
+            d={mark=o},%
+            e={mark=triangle},%
+            f={mark=pentagon}
+        },
+        ylabel=$Connectivity$,
+        xlabel=$CPU \; (ms)$,
+        mark options={scale=2},
+        legend style={at={(0.25,0.9)}}
+    ]
+    \addplot[scatter,only marks,scatter src=explicit symbolic]
+        coordinates {
+            (20384066, 0.14856667) [a]
+            (17949001, 0.2356) [b]
+            (20892062, 0.2736) [c]
+            (20885921, 0.4238) [d]
+            (20934061, 0.51803333) [e]
+            (20561815, 0.64733333) [f]
+        };
+        \legend{$R_{ut}$, $R_{t}$, $R_{a}$, $R_{at}$,
+        $R_{ioa}$, $R_{ioat}$}
+    \end{axis}
+    \uncover<2->{
+        \draw[red,ultra thick] (5.2,5.5) rectangle (6.6,1.2);
+        \draw[blue,ultra thick] (.2,1.7) rectangle (5.6,.2);
+    }
+    \uncover<3-3>{
+        \draw[draw=none,pattern=north west lines,pattern color=red,ultra thick] (5.2,5.5) rectangle (6,4.8);
+    }
+    \uncover<4-4>{
+        \draw[draw=none,pattern=north east lines,pattern color=blue,ultra thick] (.2,1.7) rectangle (1,1);
+    }
+\end{tikzpicture}

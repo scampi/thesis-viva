@@ -221,4 +221,46 @@
         \input{images/precision/datasets-nodes-edges}
     \end{columns}
 }
+
+\setbeamercovered{invisible}
+\frame{
+    \frametitle{Tradeoffs: Precision VS. Compression}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.46\textwidth}
+            \resizebox{\textwidth}{!}{
+                \input{images/precision/tradeoff-volume*conn}
+            }
+            \caption{Connectivity precision versus compression ratio.}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[t]{0.46\textwidth}
+            \resizebox{\textwidth}{!}{
+                \input{images/precision/tradeoff-volume*schema}
+            }
+            \caption{Type and attribute precision versus compression ratio.}
+        \end{subfigure}
+    \end{figure}
+}
+
+\frame{
+    \frametitle{Tradeoffs: Precision VS. Performance}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.46\textwidth}
+            \resizebox{\textwidth}{!}{
+                \input{images/precision/tradeoff-cpu*conn}
+            }
+            \caption{Connectivity precision versus summarisation performance.}
+        \end{subfigure}
+        \quad%
+        \begin{subfigure}[t]{0.46\textwidth}
+            \resizebox{\textwidth}{!}{
+                \input{images/precision/tradeoff-cpu*schema}
+            }
+            \caption{Type and attribute precision versus summarisation performance.}
+        \end{subfigure}
+    \end{figure}
+}
+\setbeamercovered{transparent}
 %% vim: et:sw=4
