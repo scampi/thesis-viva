@@ -161,17 +161,25 @@
 \frame{
     \frametitle{Implementations}
     \begin{block}{Algorithm}
-        
+        \begin{enumerate}
+            \item Entity description (group operator)
+            \item Nodes mapping (object invention)
+            \item Edges materialization (join operator)
+        \end{enumerate}
     \end{block}
     \begin{columns}[c]
         \column{.5\textwidth}
         \begin{block}{SPARQL}
-            
+            \begin{alert}{Performance:}
+               timeout for graphs above 20M triples.
+           \end{alert} 
         \end{block}
 
         \column{.5\textwidth}
         \begin{block}{MapReduce}
-            
+            \begin{alert}{Performance:}
+               Scale to large graphs up to 50B triples.
+           \end{alert} 
         \end{block}
     \end{columns}
 }
