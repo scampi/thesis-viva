@@ -158,8 +158,9 @@
 
 \subsection{Implementations}
 
-\frame{
+\frame[shrink]{
     \frametitle{Implementations}
+    \vspace{.5cm}
     \begin{block}{Algorithm}
         \begin{enumerate}
             \item Entity description (group operator)
@@ -167,20 +168,38 @@
             \item Edges materialization (join operator)
         \end{enumerate}
     \end{block}
-    \begin{columns}[c]
-        \column{.5\textwidth}
-        \begin{block}{SPARQL}
-            \begin{alert}{Performance:}
-               timeout for graphs above 20M triples.
-           \end{alert} 
-        \end{block}
+    \uncover<2->{
+        \begin{columns}[c]
+            \column{.5\textwidth}
+            \begin{block}{SPARQL}
+                \begin{alert}{Performance:}
+                    Timeout for graphs above 20M triples.
+                \end{alert} 
+                \\
+                \begin{alert}{Pros:}
+                    Leverage endpoint for optimizing queries.
+                \end{alert}
+                \\
+                \begin{alert}{Const:}
+                    Bounded by the expressivity of SPARQL.
+                \end{alert}
+            \end{block}
 
-        \column{.5\textwidth}
-        \begin{block}{MapReduce}
-            \begin{alert}{Performance:}
-               Scale to large graphs up to 50B triples.
-           \end{alert} 
-        \end{block}
-    \end{columns}
+            \column{.5\textwidth}
+            \begin{block}{MapReduce}
+                \begin{alert}{Performance:}
+                    Scale to large graphs up to 50B triples.
+                \end{alert} 
+                \\
+                \begin{alert}{Pros:}
+                    More possiblities for optimisations.
+                \end{alert}
+                \\
+                \begin{alert}{Cons:}
+                    Cluster maintenance.
+                \end{alert}
+            \end{block}
+        \end{columns}
+    }
 }
 %% vim: et:sw=4
