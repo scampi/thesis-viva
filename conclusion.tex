@@ -1,0 +1,45 @@
+\section{Conclusion}
+
+\frame{
+    \frametitle{Summary And Directions for Future Research}
+    \begin{columns}[c]
+        \column{.3\textwidth}
+        \begin{figure}
+            \resizebox{.9\textwidth}{!}{
+                \begin{tikzpicture}
+                    \begin{axis}[
+                            ybar,
+                            symbolic x coords={Nodes,Edges},
+                            enlargelimits=0.25, 
+                            x=2cm,
+                            bar width=0.3cm,
+                            xtick=data,
+                            ymajorgrids = true,
+                            legend style={at={(0.5,-0.15)},
+                            anchor=north,legend columns=1},
+                        ]
+                        \addplot coordinates {
+                                (Nodes, 65042837)
+                                (Edges, 233051608)
+                            };
+
+                        \addplot coordinates {
+                                (Nodes, 1450687)
+                                (Edges, 19725084)
+                            };
+                        \legend{DBpedia 2013 (en),Types Summary}
+                    \end{axis}
+                    %\draw[step=1cm,gray,ultra thick] (0,0) grid (3,5);
+                    \draw[red,ultra thick] (.4,2.2) edge[->,>=stealth'] node[above right] {\textbf{$96\%$}} (.7,1.1);
+                    \draw[red,ultra thick] (2.4,4.8) edge[->,>=stealth'] node[above right] {\textbf{$92\%$}} (2.7,1.4);
+                \end{tikzpicture}
+            }
+        \end{figure}
+        \column{.7\textwidth}
+        \begin{description}
+            \item<2->[Summary Updates:] Efficiently updates the summary of a dataset without avoiding to re-do the process from scratch.
+            \item<3->[Data Quality:] Improve the data modeling by identifying structural inconsistencies.
+            \item<4->[Approximate Summaries:] Develop summarisation relations which have little impact on the connectivity precision, and yet generate small summaries.
+        \end{description}
+    \end{columns}
+}
