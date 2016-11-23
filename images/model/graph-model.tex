@@ -86,20 +86,19 @@
     }
 
     \uncover<6-6>{
-        \node [draw,circle,below of = n2,yshift=1.25cm] (person) {\textcolor{red}{Person}};
-        \node [draw,circle,above right of = n4,xshift=-.7cm] (place) {\textcolor{red}{Place}};
-        \node [draw,circle,above of = n7,yshift=0cm] (country) {\textcolor{red}{Country}};
-        \node [draw,circle,above left of = n3,xshift=1cm] (city) {\textcolor{red}{City}};
+        \node [green highlight node,draw,circle,right of = n3] (n6) {$v_6$};
+        \node [red,draw,circle,above right of = n4,xshift=-.7cm] (place) {Place};
+        \node [red,draw,circle,above of = n7,yshift=0cm] (country) {Country};
         \path
-            (n3) edge node[red highlight node] {type} (city)
+            (n3) edge node[fill=white] {type} (city)
             (n6) edge node[red highlight node] {type} (country)
-            (n7) edge node[red highlight node] {type} (country)
-            (n4) edge node[red highlight node] {type} (place)
-            (n5) edge node[red highlight node] {type} (place)
+            (n7) edge node[fill=white] {type} (country)
+            (n4) edge node[fill=white] {type} (place)
+            (n5) edge node[fill=white] {type} (place)
             (n6) edge node[red highlight node] {type} (place)
-            (n7) edge node[red highlight node] {type} (place)
-            (n1) edge node[red highlight node] {type} (person)
-            (n2) edge node[red highlight node] {type} (person)
+            (n7) edge node[fill=white] {type} (place)
+            (n1) edge node[fill=white] {type} (person)
+            (n2) edge node[fill=white] {type} (person)
 
             (n7) edge node[fill=white] {capital} (rome)
             (n6) edge node[fill=white] {label} (ire)
