@@ -1,7 +1,5 @@
 \begin{tikzpicture}[->,>=stealth',node distance=3.5cm]
-    \node [draw,circle] (n0) {$v_0$};
-    \node [draw,circle,above of = n0] (effi) {Effi\ldots};
-    \node [red,draw,circle,right of = n0] (n2) {$v_1$};
+    \node [red,draw,circle] (n2) {$v_1$};
     \node [draw,circle,below of = n2,yshift=-1cm] (n1) {$v_2$};
     \node [blue,draw,circle,right of = n2] (n3) {$v_3$};
     \node [draw,circle,right of = n3] (n6) {$v_6$};
@@ -45,10 +43,6 @@
         (n2) edge node[fill=white] {name} (ste)
         (n1) edge node[fill=white] {type} (person)
         (n2) edge node[fill=white] {type} (person)
-        (n0) edge node[fill=white] {title} (effi)
-        (n0) edge[bend right] node[fill=white] {creator} (n2)
-        (n0) edge[bend left] node[fill=white] {author} (n2)
-        (n0) edge node[fill=white] {author} (n1)
         (n1) edge node[fill=white] {lives} (n3)
         (n1) edge node[fill=white] {works} (n4)
         (n2) edge node[fill=white] {lives} (n3)
