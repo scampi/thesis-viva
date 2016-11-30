@@ -184,36 +184,42 @@
     \frametitle{Evaluation Dimensions}
     \vspace{2em}
     \Wider{
-        \begin{block}{How small the summary is compared to the original graph ?}
-            Ratio of order and size of the graph $G$ to the summary $\mathcal{S}$:
+        \uncover<2->{
+            \begin{block}{How small the summary is compared to the original graph ?}
+                Ratio of order and size of the graph $G$ to the summary $\mathcal{S}$:
 
-            $$
-            G:\mathcal{S} = \frac{\vert V \vert + \vert A \vert}{\vert \mathcal{W} \vert + \vert \mathcal{B} \vert}
-            $$
-        \end{block}
-        \begin{block}{How performant and scalable is the summarization process ?}
-            Record of the time spent on the process
-        \end{block}
-        \begin{block}{How precise is the generated summary ?}
-            Average precision of the summary:
+                $$
+                G:\mathcal{S} = \frac{\vert V \vert + \vert A \vert}{\vert \mathcal{W} \vert + \vert \mathcal{B} \vert}
+                $$
+            \end{block}
+        }
+        \uncover<3->{
+            \begin{block}{How performant and scalable is the summarization process ?}
+                Record of the time spent on the process
+            \end{block}
+        }
+        \uncover<4->{
+            \begin{block}{How precise is the generated summary ?}
+                Average precision of the summary:
 
-            $$
-            \frac{1}{\vert \mathcal{W}_{fbt} \vert} \times \sum_{c \in \mathcal{W}}{\frac{1}{\vert C(c) \vert} \times \sum_{x \in C(c)}{Prec(R, x)}}
-            $$
-        \end{block}
+                $$
+                \frac{1}{\vert \mathcal{W}_{fbt} \vert} \times \sum_{c \in \mathcal{W}}{\frac{1}{\vert C(c) \vert} \times \sum_{x \in C(c)}{Prec(R, x)}}
+                $$
+            \end{block}
+        }
     }
     \setbeamercovered{invisible}
     \begin{tikzpicture}[remember picture]
         %\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
         %\draw[step=.1cm,blue,overlay] (0,0) grid (12,12);
 
-        \uncover<2-2>{
+        \uncover<5-5>{
             \draw[red,thick,overlay] (6.9,.7) rectangle (8.8,1.3);
         }
-        \uncover<3-3>{
+        \uncover<6-6>{
             \draw[red,thick,overlay] (4.4,.2) rectangle (8.8,1.5);
         }
-        \uncover<4-4>{
+        \uncover<7-7>{
             \draw[red,thick,overlay] (2.1,.2) rectangle (8.8,1.5);
         }
     \end{tikzpicture}
