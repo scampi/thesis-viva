@@ -1,4 +1,3 @@
-\setbeamercovered{invisible}
 \begin{figure}
     \centering
     \resizebox{!}{.8\textheight}{
@@ -17,28 +16,7 @@
                 \addplot coordinates { (38,nytimes) (63,cordis) (174,wb) (58,europeana) (49,eures) (35,gnd) (143,datos) (53,bnb) (46,lobid) (120,ecs) (30,b3kat) (267,enipedia) (10060,twclogd) (22369,dbpedia) };
                 \legend{Types,Attributes}
             \end{axis}
-
-            \uncover<2->{
-                % very high
-                \draw[black!75,ultra thick,overlay] (0,12) rectangle (17.2,10.37) node[midway] {\textbf{\textcolor{black}{Very High}}};
-            }
-
-            \uncover<3->{
-                % high
-                \draw[black!50!green,ultra thick,overlay] (0,10.3) rectangle (17.2,8.9) node[midway] {\textbf{\textcolor{black!50!green}{High}}};
-            }
-
-            \uncover<4->{
-                % medium
-                \draw[red!75,ultra thick,overlay] (0,8.82) rectangle (17.2,3.65) node[midway] {\textbf{\textcolor{red}{Medium}}};
-            }
-
-            \uncover<5->{
-                % low
-                \draw[blue!75,ultra thick,overlay] (0,3.55) rectangle (17.2,0.6) node[midway] {\textbf{\textcolor{blue}{Low}}};
-            }
         \end{tikzpicture}
     }
 \end{figure}
-\setbeamercovered{transparent}
 %% vim: et:sw=4
