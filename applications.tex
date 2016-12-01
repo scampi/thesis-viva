@@ -98,17 +98,16 @@ SELECT ?POF {
     \end{columns}
     \setbeamercovered{invisible}
     \begin{tikzpicture}[remember picture]
-        %\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
 
-        \uncover<2->{
+        \uncover<2-6>{
             \draw[red,ultra thick,overlay] (1.6,1.1) circle (.3);
         }
 
-        \uncover<1-2>{
-            \fill[white,ultra thick,overlay] (6,6.95) rectangle (10,5.6);
+        \uncover<1-2,7->{
+            \fill[white,ultra thick,overlay] (6,6.65) rectangle (10,5.6);
         }
 
-        \uncover<1-3>{
+        \uncover<1-3,7->{
             \fill[white,ultra thick,overlay] (6,5.6) rectangle (10,4.65);
         }
 
@@ -122,9 +121,23 @@ SELECT ?POF {
             \fill[white,ultra thick,overlay] (6,.5) rectangle (10,0.1);
         }
 
-        \uncover<6->{
+        \uncover<6-6>{
             \draw[red,ultra thick,overlay] (8.3,.6) circle (.3);
             \draw[red,ultra thick,overlay] (7.76,6.75) circle (.3);
+        }
+
+        \uncover<7->{
+            \node[draw,circle=.2,red,ultra thick,overlay] (a) at (1.3,1.1) {};
+            \node[draw,circle=.2,red,ultra thick,overlay] (b) at (1.3,2) {};
+            \node[draw,circle=.2,red,ultra thick,overlay] (c) at (2.6,3) {};
+            \node[draw,circle=.2,red,ultra thick,overlay] (d) at (1.3,3) {};
+            \node[draw,circle=.2,red,ultra thick,overlay] (e) at (1.3,4.3) {};
+            \path[draw,circle=.2,red,ultra thick,overlay]
+                (a) edge (b)
+                (b) edge (c)
+                (c) edge[bend right] (d)
+                (d) edge (e)
+            ;
         }
 
     \end{tikzpicture}
