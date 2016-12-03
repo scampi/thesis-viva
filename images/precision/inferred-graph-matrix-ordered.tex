@@ -1,5 +1,5 @@
-\pgfplotstableread[header=false]{inferred-graph-matrix-ordered.dat}{\graph} 
-\pgfplotstablegetrowsof{inferred-graph-matrix-ordered.dat}
+\pgfplotstableread[header=false]{images/precision/inferred-graph-matrix-ordered.dat}{\graph} 
+\pgfplotstablegetrowsof{images/precision/inferred-graph-matrix-ordered.dat}
 \pgfmathsetmacro{\rows}{\pgfplotsretval}
 
 %name = 1 = red
@@ -56,7 +56,15 @@
                                 \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
                             }
                             \case{8}{
-                                \node [Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                %% two colors: magenta and brown. Magenta is drown with stripes below
+                                \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                \begin{scope}
+                                    \clip (\col-1+.027,-\row-.027) rectangle (\col-.027,-\row-1+.027);
+                                    \foreach \x in {0,0.4,...,\rows} {%
+                                        \draw [brown,line width=4pt] (0,\x) -- (\rows,\x - \rows);
+                                        \draw [brown,line width=4pt] (0,-\x) -- (\rows,-\x - \rows);
+                                    }
+                                \end{scope}
                             }
                         \end{switch}
                     }

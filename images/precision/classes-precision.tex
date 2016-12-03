@@ -1,5 +1,5 @@
-\pgfplotstableread[header=false]{classes-matrix.dat}{\classes} 
-\pgfplotstablegetrowsof{classes-matrix.dat}
+\pgfplotstableread[header=false]{images/precision/classes-matrix.dat}{\classes} 
+\pgfplotstablegetrowsof{images/precision/classes-matrix.dat}
 \pgfmathsetmacro{\classesRows}{\pgfplotsretval}
 
 %%%
@@ -132,7 +132,15 @@
                                 \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
                             }
                             \case{8}{
-                                \node [Magenta Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                %% two colors: magenta and brown. Magenta is drown with stripes below
+                                \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                \begin{scope}
+                                    \clip (\col-1+.027,-\row-.027) rectangle (\col-.027,-\row-1+.027);
+                                    \foreach \x in {0,0.4,...,\classesRows} {%
+                                        \draw [brown,line width=4pt] (0,\x) -- (\classesRows,\x - \classesRows);
+                                        \draw [brown,line width=4pt] (0,-\x) -- (\classesRows,-\x - \classesRows);
+                                    }
+                                \end{scope}
                             }
                         \end{switch}
                     }
