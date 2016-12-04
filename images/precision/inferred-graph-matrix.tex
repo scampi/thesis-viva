@@ -33,12 +33,67 @@
 \begin{tikzpicture}[draw=black, ultra thick]
     \foreach \col in {0,...,\classesRows} {%
         \foreach \row in {0,...,\classesRows} {%
-            \ifthenelse{\row=0 \AND \col=0}{
-                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+            \ifthenelse{\row=0}{
+                \begin{switch}{\col}
+                    \case{1}{ % A - person - 11
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {11};
+                    }
+                    \case{2}{ % B - city - 2
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {2};
+                    }
+                    \case{3}{ % C - country - 5
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {5};
+                    }
+                    \case{4}{ % D - v3 - 8
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {8};
+                    }
+                    \case{5}{ % E - v1 - 7
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {7};
+                    }
+                    \case{6}{ % E - v2 - 13
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {13};
+                    }
+                    \case{7}{ % F - stephane - 1
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {1};
+                    }
+                    \case{8}{ % F - galway - 3
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {3};
+                    }
+                    \case{9}{ % F - ireland - 4
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {4};
+                    }
+                    \case{10}{ % F - rome - 6
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {6};
+                    }
+                    \case{11}{ % F - renaud - 16
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {16};
+                    }
+                    \case{12}{ % F - deri - 17
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {17};
+                    }
+                    \case{13}{ % F - fbk - 18
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {18};
+                    }
+                    \case{14}{ % G - v6 - 9
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {9};
+                    }
+                    \case{15}{ % G - v7 - 10
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {10};
+                    }
+                    \case{16}{ % H - v4 - 14
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {14};
+                    }
+                    \case{17}{ % H - v5 - 15
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {15};
+                    }
+                    \case{18}{ % I - place - 12
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {12};
+                    }
+                \end{switch}
             }
             {
-                \ifthenelse{\row=0}{
-                    \begin{switch}{\col}
+                \ifthenelse{\col=0}{
+                    \begin{switch}{\row}
                         \case{1}{ % A - person - 11
                             \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {11};
                         }
@@ -96,108 +151,48 @@
                     \end{switch}
                 }
                 {
-                    \ifthenelse{\col=0}{
-                        \begin{switch}{\row}
-                            \case{1}{ % A - person - 11
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {11};
-                            }
-                            \case{2}{ % B - city - 2
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {2};
-                            }
-                            \case{3}{ % C - country - 5
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {5};
-                            }
-                            \case{4}{ % D - v3 - 8
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {8};
-                            }
-                            \case{5}{ % E - v1 - 7
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {7};
-                            }
-                            \case{6}{ % E - v2 - 13
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {13};
-                            }
-                            \case{7}{ % F - stephane - 1
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {1};
-                            }
-                            \case{8}{ % F - galway - 3
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {3};
-                            }
-                            \case{9}{ % F - ireland - 4
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {4};
-                            }
-                            \case{10}{ % F - rome - 6
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {6};
-                            }
-                            \case{11}{ % F - renaud - 16
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {16};
-                            }
-                            \case{12}{ % F - deri - 17
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {17};
-                            }
-                            \case{13}{ % F - fbk - 18
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {18};
-                            }
-                            \case{14}{ % G - v6 - 9
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {9};
-                            }
-                            \case{15}{ % G - v7 - 10
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {10};
-                            }
-                            \case{16}{ % H - v4 - 14
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {14};
-                            }
-                            \case{17}{ % H - v5 - 15
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {15};
-                            }
-                            \case{18}{ % I - place - 12
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {12};
-                            }
-                        \end{switch}
-                    }
-                    {
-                        \pgfmathsetmacro{\x}{int(\row-1)}
-                        \pgfmathsetmacro{\y}{int(\col-1)}
+                    \pgfmathsetmacro{\x}{int(\row-1)}
+                    \pgfmathsetmacro{\y}{int(\col-1)}
 
-                        \pgfplotstablegetelem{\x}{\y}\of{\classes} 
+                    \pgfplotstablegetelem{\x}{\y}\of{\classes} 
 
-                        \begin{switch}{\pgfplotsretval}
-                            \case{0}{
-                                \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{1}{
-                                \node [Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{2}{
-                                \node [Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{3}{
-                                \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{4}{
-                                \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{5}{
-                                \node [Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{6}{
-                                \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{7}{
-                                \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                            }
-                            \case{8}{
-                                %% two colors: magenta and brown. Magenta is drown with stripes below
-                                \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
-                                \begin{scope}
-                                    \clip (\col-1+.027,-\row-.027) rectangle (\col-.027,-\row-1+.027);
-                                    \foreach \x in {0,0.4,...,\classesRows} {%
-                                        \draw [brown,line width=4pt] (0,\x) -- (\classesRows,\x - \classesRows);
-                                        \draw [brown,line width=4pt] (0,-\x) -- (\classesRows,-\x - \classesRows);
-                                    }
-                                \end{scope}
-                            }
-                        \end{switch}
-                    }
+                    \begin{switch}{\pgfplotsretval}
+                        \case{0}{
+                            \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{1}{
+                            \node [Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{2}{
+                            \node [Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{3}{
+                            \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{4}{
+                            \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{5}{
+                            \node [Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{6}{
+                            \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{7}{
+                            \node [Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                        }
+                        \case{8}{
+                            %% two colors: magenta and brown. Magenta is drown with stripes below
+                            \node [Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                            \begin{scope}
+                                \clip (\col-1+.027,-\row-.027) rectangle (\col-.027,-\row-1+.027);
+                                \foreach \x in {0,0.4,...,\classesRows} {%
+                                    \draw [brown,line width=4pt] (0,\x) -- (\classesRows,\x - \classesRows);
+                                    \draw [brown,line width=4pt] (0,-\x) -- (\classesRows,-\x - \classesRows);
+                                }
+                            \end{scope}
+                        }
+                    \end{switch}
                 }
             }
         }
