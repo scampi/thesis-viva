@@ -19,14 +19,6 @@
     \node [draw,circle,above right of = n7] (rome) {6};
     \node [draw,circle,above of = n6] (ire) {4};
 
-    \uncover<2-2>{
-        \draw [brown,line width=5pt,bend right=45] (n7) edge (rome);
-    }
-
-    \uncover<3-3>{
-        \draw [black!30!green,line width=5pt,bend left] (n3) edge (n7);
-    }
-
     \path
         (n7) edge node[fill=white] {capital} (rome)
         (n6) edge node[fill=white] {label} (ire)
@@ -57,6 +49,18 @@
         (n2) edge node[fill=white] {lives} (n3)
         (n2) edge[near end] node[fill=white] {works} (n4)
         ;
+
+    \uncover<2->{
+        \draw [brown,line width=5pt,bend right=45] (n7) edge (rome);
+    }
+
+    \uncover<3->{
+        \draw [black!30!green,line width=5pt,bend left] (n4) edge (n7);
+    }
+
+    \uncover<4->{
+        \draw [black highlight edge] (n1) edge node[fill=white] {works} (n4);
+    }
 \end{tikzpicture}
 \setbeamercovered{transparent}
 % vim: et:sw=4

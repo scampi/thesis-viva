@@ -141,7 +141,7 @@
                 }
             }
         }
-        \draw [brown,ultra thick,line width=4pt] ($(6,-10)-(0.5,0.5)$) circle (1cm);
+        \draw [brown,ultra thick,line width=5pt] ($(6,-10)-(0.5,0.5)$) circle (1cm);
     }
 
     \uncover<3-3>{
@@ -183,7 +183,7 @@
                                     \node [Dim Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
                                 }
                                 \case{6}{
-                                    \ifthenelse{\row=8 \AND \col=10}{
+                                    \ifthenelse{\row=14 \AND \col=10}{
                                         \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
                                     }
                                     {
@@ -210,7 +210,80 @@
                 }
             }
         }
-        \draw [black!30!green,ultra thick,line width=4pt] ($(10,-8)-(0.5,0.5)$) circle (1cm);
+        \draw [black!30!green,ultra thick,line width=5pt] ($(10,-14)-(0.5,0.5)$) circle (1cm);
+    }
+
+    \uncover<4-4>{
+        \foreach \col in {0,...,\rows} {%
+            \foreach \row in {0,...,\rows} {%
+                \ifthenelse{\row=0 \AND \col=0}{
+                }
+                {
+                    \ifthenelse{\row=0}{
+                        \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\col};
+                    }
+                    {
+                        \ifthenelse{\col=0}{
+                            \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {\row};
+                        }
+                        {
+                            \pgfmathsetmacro{\x}{int(\row-1)}
+                            \pgfmathsetmacro{\y}{int(\col-1)}
+
+                            \pgfplotstablegetelem{\x}{\y}\of{\graph} 
+
+                            \begin{switch}{\pgfplotsretval}
+                                \case{0}{
+                                    \node [Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{1}{
+                                    \node [Dim Red Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{2}{
+                                    \node [Dim Blue Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{3}{
+                                    \ifthenelse{\row=10 \AND \col=6}{
+                                        \node [Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                    {
+                                        \node [Dim Brown Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                }
+                                \case{4}{
+                                    \node [Dim Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{5}{
+                                    \node [Dim Orange Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{6}{
+                                    \ifthenelse{\row=14 \AND \col=10}{
+                                        \node [Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                    {
+                                        \node [Dim Green Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    }
+                                }
+                                \case{7}{
+                                    \node [Dim Black Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                }
+                                \case{8}{
+                                    %% two colors: magenta and brown. Brown is drown with stripes below
+                                    \node [Dim Magenta Square] at ($(\col,-\row)-(0.5,0.5)$) {};
+                                    \begin{scope}
+                                        \clip (\col-1+.027,-\row-.027) rectangle (\col-.027,-\row-1+.027);
+                                        \foreach \x in {0,0.4,...,\rows} {%
+                                            \draw [brown!50,line width=4pt] (0,\x) -- (\rows,\x - \rows);
+                                            \draw [brown!50,line width=4pt] (0,-\x) -- (\rows,-\x - \rows);
+                                        }
+                                    \end{scope}
+                                }
+                            \end{switch}
+                        }
+                    }
+                }
+            }
+        }
     }
 \end{tikzpicture}
 \setbeamercovered{transparent}
