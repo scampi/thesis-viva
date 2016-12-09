@@ -50,7 +50,7 @@
         (n2) edge[near end] node[fill=white] {works} (n4)
         ;
 
-    \uncover<2->{
+    \uncover<2-2>{
         \draw [brown,line width=5pt,bend right=45] (n7) edge (rome);
     }
 
@@ -59,7 +59,9 @@
     }
 
     \uncover<4->{
-        \draw [black highlight edge] (n1) edge node[fill=white] {works} (n4);
+        \path 
+            (n1) edge[black highlight edge] node[fill=white] {works} (n4)
+            (n7) edge[magenta highlight edge] node[fill=white] {capital} (rome);
     }
 \end{tikzpicture}
 \setbeamercovered{transparent}
