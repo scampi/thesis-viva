@@ -30,7 +30,7 @@
 %H = 2
 %I = 1
 
-\begin{tikzpicture}[draw=black, ultra thick]
+\begin{tikzpicture}[draw=black,every node/.style={ultra thick},spy using outlines={height=15cm,width=5cm,red, every spy on node/.append style={ultra thick},magnification=3.5,connect spies}]
     \foreach \col in {0,...,\classesRows} {%
         \foreach \row in {0,...,\classesRows} {%
             \ifthenelse{\row=0}{
@@ -196,6 +196,9 @@
                 }
             }
         }
+    }
+    \only<2-2>{
+        \spy[overlay] on (-.5,-2.5) in node [fill=white,line width=.2cm,left] at (-3,-3);
     }
 \end{tikzpicture}
 %% vim: et:sw=4

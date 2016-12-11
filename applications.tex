@@ -160,138 +160,138 @@ SELECT ?POF {
     \setbeamercovered{transparent}
 \end{frame}
 
-\subsection{Web Data Inspector}
+%\subsection{Web Data Inspector}
 
-\frame{
-    \frametitle{Web Data Inspector}
-    \begin{block}{Application}
-        \begin{itemize}
-            \item Provide insights into the structure of a dataset
-            \item Views:
-                \begin{itemize}
-                    \item Links inside the dataset
-                    \item Links from/to the dataset
-                    \item Third-party links
-                \end{itemize}
-        \end{itemize}
-    \end{block}
-    \begin{block}{Solution}
-        Leverage statistics and metadata gathered during the summarisation to highlight important parts.
-    \end{block}
-}
-
-\frame{
-    \frametitle{Inside the Dataset View}
-    \begin{columns}
-        \column{.35\textwidth}
-        \begin{figure}
-            \centering
-            \resizebox{\textwidth}{!}{
-                \includegraphics[scale=1]{images/applications/top-properties.eps}
-            }
-        \end{figure}
-        \begin{figure}
-            \centering
-            \resizebox{\textwidth}{!}{
-                \includegraphics[scale=1]{images/applications/top-classes.eps}
-            }
-        \end{figure}
-
-        \column{.65\textwidth}
-        \begin{figure}
-            \centering
-            \resizebox{\textwidth}{!}{
-                \includegraphics[scale=1]{images/applications/split-properties.eps}
-            }
-        \end{figure}
-        \begin{figure}
-            \centering
-            \resizebox{\textwidth}{!}{
-                \includegraphics[scale=1]{images/applications/split-classes.eps}
-            }
-        \end{figure}
-    \end{columns}
-    \setbeamercovered{invisible}
-    \begin{tikzpicture}[remember picture]
-        %\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
-
-        \uncover<2-2>{
-            \draw[red,ultra thick,overlay] (-.4,3.1) rectangle (3.5,5.5);
-        }
-        \uncover<3-3>{
-            \draw[red,ultra thick,overlay] (-.4,2.4) rectangle (3.5,-.1);
-        }
-        \uncover<4-4>{
-            \draw[red,ultra thick,overlay] (4.1,3.1) rectangle (11.2,5.5);
-            \draw[red,thick,overlay] (5,4.65) edge[->,>=stealth'] (7.8,4.65);
-        }
-        \uncover<5-5>{
-            \draw[red,ultra thick,overlay] (4.1,2.4) rectangle (11.2,-.1);
-            \draw[red,thick,overlay] (5.3,.65) edge[->,>=stealth'] (7.8,1.65);
-        }
-    \end{tikzpicture}
-    \setbeamercovered{transparent}
-}
+%\frame{
+    %\frametitle{Web Data Inspector}
+    %\begin{block}{Application}
+        %\begin{itemize}
+            %\item Provide insights into the structure of a dataset
+            %\item Views:
+                %\begin{itemize}
+                    %\item Links inside the dataset
+                    %\item Links from/to the dataset
+                    %\item Third-party links
+                %\end{itemize}
+        %\end{itemize}
+    %\end{block}
+    %\begin{block}{Solution}
+        %Leverage statistics and metadata gathered during the summarisation to highlight important parts.
+    %\end{block}
+%}
 
 %\frame{
     %\frametitle{Inside the Dataset View}
-    %\begin{figure}
-        %\centering
-        %\resizebox{!}{.8\textheight}{
-            %\includegraphics[scale=1]{images/applications/insideThisDataset.eps}
+    %\begin{columns}
+        %\column{.35\textwidth}
+        %\begin{figure}
+            %\centering
+            %\resizebox{\textwidth}{!}{
+                %\includegraphics[scale=1]{images/applications/top-properties.eps}
+            %}
+        %\end{figure}
+        %\begin{figure}
+            %\centering
+            %\resizebox{\textwidth}{!}{
+                %\includegraphics[scale=1]{images/applications/top-classes.eps}
+            %}
+        %\end{figure}
+
+        %\column{.65\textwidth}
+        %\begin{figure}
+            %\centering
+            %\resizebox{\textwidth}{!}{
+                %\includegraphics[scale=1]{images/applications/split-properties.eps}
+            %}
+        %\end{figure}
+        %\begin{figure}
+            %\centering
+            %\resizebox{\textwidth}{!}{
+                %\includegraphics[scale=1]{images/applications/split-classes.eps}
+            %}
+        %\end{figure}
+    %\end{columns}
+    %\setbeamercovered{invisible}
+    %\begin{tikzpicture}[remember picture]
+        %%\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
+
+        %\uncover<2-2>{
+            %\draw[red,ultra thick,overlay] (-.4,3.1) rectangle (3.5,5.5);
         %}
-    %\end{figure}
+        %\uncover<3-3>{
+            %\draw[red,ultra thick,overlay] (-.4,2.4) rectangle (3.5,-.1);
+        %}
+        %\uncover<4-4>{
+            %\draw[red,ultra thick,overlay] (4.1,3.1) rectangle (11.2,5.5);
+            %\draw[red,thick,overlay] (5,4.65) edge[->,>=stealth'] (7.8,4.65);
+        %}
+        %\uncover<5-5>{
+            %\draw[red,ultra thick,overlay] (4.1,2.4) rectangle (11.2,-.1);
+            %\draw[red,thick,overlay] (5.3,.65) edge[->,>=stealth'] (7.8,1.65);
+        %}
+    %\end{tikzpicture}
+    %\setbeamercovered{transparent}
 %}
 
-\frame{
-    \frametitle{To/From the Dataset View}
-    \vspace{.6cm}
-    \begin{figure}
-        \centering
-        \resizebox{.6\textwidth}{!}{
-            \includegraphics[scale=1]{images/applications/out-links.eps}
-        }
-    \end{figure}
-    \vspace{-.3cm}
-    \begin{figure}
-        \centering
-        \resizebox{.6\textwidth}{!}{
-            \includegraphics[scale=1]{images/applications/in-links.eps}
-        }
-    \end{figure}
-    \setbeamercovered{invisible}
-    \begin{tikzpicture}[remember picture]
-        %\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
+%%\frame{
+    %%\frametitle{Inside the Dataset View}
+    %%\begin{figure}
+        %%\centering
+        %%\resizebox{!}{.8\textheight}{
+            %%\includegraphics[scale=1]{images/applications/insideThisDataset.eps}
+        %%}
+    %%\end{figure}
+%%}
 
-        \uncover<2-2>{
-            \draw[red,ultra thick,overlay] (2.1,4.1) rectangle (8.7,7.5);
-            \draw[red,thick,overlay] (3.3,6.5) edge[->,>=stealth'] (5.5,6.5);
-        }
-        \uncover<3-3>{
-            \draw[red,ultra thick,overlay] (2.1,.6) rectangle (8.7,4.1);
-            \draw[red,thick,overlay] (3.65,2.3) edge[->,>=stealth'] (5.5,3);
-        }
-    \end{tikzpicture}
-    \setbeamercovered{transparent}
-}
+%\frame{
+    %\frametitle{To/From the Dataset View}
+    %\vspace{.6cm}
+    %\begin{figure}
+        %\centering
+        %\resizebox{.6\textwidth}{!}{
+            %\includegraphics[scale=1]{images/applications/out-links.eps}
+        %}
+    %\end{figure}
+    %\vspace{-.3cm}
+    %\begin{figure}
+        %\centering
+        %\resizebox{.6\textwidth}{!}{
+            %\includegraphics[scale=1]{images/applications/in-links.eps}
+        %}
+    %\end{figure}
+    %\setbeamercovered{invisible}
+    %\begin{tikzpicture}[remember picture]
+        %%\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
 
-\frame{
-    \frametitle{Third-party Links View}
-    \begin{figure}
-        \centering
-        \resizebox{.7\textwidth}{!}{
-            \includegraphics[scale=1]{images/applications/third-party.eps}
-        }
-    \end{figure}
-    \setbeamercovered{invisible}
-    \begin{tikzpicture}[remember picture]
-        %\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
+        %\uncover<2-2>{
+            %\draw[red,ultra thick,overlay] (2.1,4.1) rectangle (8.7,7.5);
+            %\draw[red,thick,overlay] (3.3,6.5) edge[->,>=stealth'] (5.5,6.5);
+        %}
+        %\uncover<3-3>{
+            %\draw[red,ultra thick,overlay] (2.1,.6) rectangle (8.7,4.1);
+            %\draw[red,thick,overlay] (3.65,2.3) edge[->,>=stealth'] (5.5,3);
+        %}
+    %\end{tikzpicture}
+    %\setbeamercovered{transparent}
+%}
 
-        \uncover<2-2>{
-            \draw[red,thick,overlay] (3.2,2.5) edge[->,>=stealth'] (5.5,3.8);
-        }
-    \end{tikzpicture}
-    \setbeamercovered{transparent}
-}
+%\frame{
+    %\frametitle{Third-party Links View}
+    %\begin{figure}
+        %\centering
+        %\resizebox{.7\textwidth}{!}{
+            %\includegraphics[scale=1]{images/applications/third-party.eps}
+        %}
+    %\end{figure}
+    %\setbeamercovered{invisible}
+    %\begin{tikzpicture}[remember picture]
+        %%\draw[step=1cm,gray,ultra thick,overlay] (0,0) grid (12,12);
+
+        %\uncover<2-2>{
+            %\draw[red,thick,overlay] (3.2,2.5) edge[->,>=stealth'] (5.5,3.8);
+        %}
+    %\end{tikzpicture}
+    %\setbeamercovered{transparent}
+%}
 
 %% vim: et:sw=4

@@ -39,10 +39,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
-\usepackage[french]{babel}
-
 \usepackage{tikz}
-\usetikzlibrary{patterns,shapes,arrows,positioning,shapes.geometric,calc,arrows.meta,fadings,decorations.pathreplacing,decorations.markings,decorations.shapes}
+\usetikzlibrary{spy,patterns,shapes,arrows,positioning,shapes.geometric,calc,arrows.meta,fadings,decorations.pathreplacing,decorations.markings,decorations.shapes}
 
 \tikzset{red highlight node/.style={fill=red!24}}
 \tikzset{green highlight node/.style={fill=green!24}}
@@ -60,7 +58,7 @@
 \newcommand{\Size}{1cm}% Adjust size of square as desired
 \tikzset{Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=white,
@@ -69,7 +67,7 @@
 }
 \tikzset{Red Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=red,
@@ -78,7 +76,7 @@
 }
 \tikzset{Blue Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=blue,
@@ -87,7 +85,7 @@
 }
 \tikzset{Orange Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=orange,
@@ -96,7 +94,7 @@
 }
 \tikzset{Green Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=black!30!green,
@@ -105,7 +103,7 @@
 }
 \tikzset{Black Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=black,
@@ -114,7 +112,7 @@
 }
 \tikzset{Magenta Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=magenta,
@@ -123,7 +121,7 @@
 }
 \tikzset{Brown Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=brown,
@@ -137,7 +135,7 @@
 
 \tikzset{Dim Red Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=red!50,
@@ -146,7 +144,7 @@
 }
 \tikzset{Dim Blue Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=blue!50,
@@ -155,7 +153,7 @@
 }
 \tikzset{Dim Orange Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=orange!50,
@@ -164,7 +162,7 @@
 }
 \tikzset{Dim Green Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=black!30!green!50,
@@ -173,7 +171,7 @@
 }
 \tikzset{Dim Black Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=black!50,
@@ -182,7 +180,7 @@
 }
 \tikzset{Dim Magenta Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=magenta!50,
@@ -191,7 +189,7 @@
 }
 \tikzset{Dim Brown Square/.style={
         inner sep=0pt,
-        text width=\Size, 
+        text width=\Size,
         minimum size=\Size,
         draw=black,
         fill=brown!50,
@@ -211,24 +209,24 @@
 
 \frame{\titlepage}
 
-\frame{
-    \frametitle{Table of Contents}
-    \begin{multicols}{2}
-        \tableofcontents
-    \end{multicols}
-}
+%\frame{
+    %\frametitle{Table of Contents}
+    %\begin{multicols}{2}
+        %\tableofcontents
+    %\end{multicols}
+%}
 
 \input{introduction}
 
-\AtBeginSection[]
-{
-    \frame{
-        \frametitle{Table of Contents}
-        \begin{multicols}{2}
-            \tableofcontents[currentsection]
-        \end{multicols}
-    }
-}
+%\AtBeginSection[]
+%{
+    %\frame{
+        %\frametitle{Table of Contents}
+        %\begin{multicols}{2}
+            %\tableofcontents[currentsection]
+        %\end{multicols}
+    %}
+%}
 
 \input{model}
 
