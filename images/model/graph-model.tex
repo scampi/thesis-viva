@@ -162,6 +162,13 @@
         \draw [red highlight edge,->] (n6) edge (country);
         \draw [red highlight edge,->] (n6) edge (place);
     }
+    \uncover<9->{
+        \path
+            (n6) edge[black highlight edge] node[black,draw,thick,fill=white] {label} (ire)
+            (n4) edge[black highlight edge] node[black,draw,thick,fill=white] {location} (n6)
+            (n2) edge[black highlight edge,near end] node[black,draw,thick,fill=white] {works} (n4)
+        ;
+    }
 \end{tikzpicture}
 \setbeamercovered{transparent}
 %% vim: et:sw=4

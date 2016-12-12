@@ -70,66 +70,68 @@
 \subsection{Precise Graph Summary}
 
 \frame{
-    \frametitle{Precise Graph Summary}
-    \begin{columns}[c]
-        \column{.55\textwidth}
-        \begin{block}{Inevitability of Precision Loss}
-            \begin{itemize}
-                \item A summary is precise if every path in the graph do exist
-                \item Creating such a summary is impractical due to the data's heterogeneity
-            \end{itemize}
-        \end{block}
-
-        \column{.5\textwidth}
-        \begin{figure}
-            \centering
-            \resizebox{\textwidth}{!}{
-                \input{images/summarisation/ontology-distribution}
-            }
-            \caption{Ontology probability distribution}
-        \end{figure}
-    \end{columns}
+    \frametitle{Structural and Vocabulary Heterogeneity}
+    \vspace{1cm}
+    \begin{figure}
+        \centering
+        \resizebox{.6\textwidth}{!}{
+            \input{images/summarisation/ontology-distribution}
+        }
+        \caption{Ontology probability distribution}
+    \end{figure}
 }
 
 \subsection{Approximate Graph Summaries}
 
 \frame{
     \frametitle{Approximate Graph Summaries}
-    \begin{block}{What is being approximated ?}
-        Some information inferred from a summary can be incorrect.
-    \end{block}
-    \begin{block}{Why approximate a summary ?}
+    \begin{block}{Precise Graph Summary: F\&B-Bisimulation}
         \begin{itemize}
-            \item Web Data is too heterogeneous for its structure to be captured perfectly
-            \item Summarisation needs to scale to large graphs
+            \item A summary is precise if every path in the summary do exist
+            \item Creating such a summary is impractical due to the data's heterogeneity
         \end{itemize}
     \end{block}
-    \begin{block}{Summarisation Features}
+    \uncover<2->{
+        \begin{block}{Approximate Graph Summary}
+            \begin{itemize}
+                \item Summarisation needs to scale to large graphs
+                \item Computationally expensive
+            \end{itemize}
+            \begin{alert}{What is being approximated ?}
+                Paths existence.
+            \end{alert}
+        \end{block}
+    }
+}
+
+\frame{
+    \frametitle{Generic Graph Summarisation Framework}
+    \begin{block}{Possible Summarisation Features}
         \begin{itemize}
             \item Types
-            \item Attributes (incoming and/or outgoing)
-        \end{itemize} 
+            \item Attributes (incoming and outgoing)
+        \end{itemize}
     \end{block}
 
-    %\uncover<2->{
-        %\begin{block}{Studied Summaries}
-            %\begin{columns}[c]
-                %\column{.5\textwidth}
-                %\begin{itemize}
-                    %\item Unique Type Summary
-                    %\item Types Summary
-                    %\item Attributes Summary
-                %\end{itemize} 
+    \uncover<2->{
+        \begin{block}{Studied Summaries}
+            \begin{columns}[c]
+                \column{.45\textwidth}
+                \begin{itemize}
+                    \item Unique Type Summary
+                    \item Types Summary
+                    \item Attributes Summary
+                \end{itemize}
 
-                %\column{.6\textwidth}
-                %\begin{itemize}
-                    %\item Types \& Attributes Summary
-                    %\item IO Attributes Summary
-                    %\item IO Attributes Types Summary
-                %\end{itemize} 
-            %\end{columns}
-        %\end{block}
-    %}
+                \column{.45\textwidth}
+                \begin{itemize}
+                    \item Types \& Attributes Summary
+                    \item IO Attributes Summary
+                    \item IO Attributes Types Summary
+                \end{itemize}
+            \end{columns}
+        \end{block}
+    }
 }
 
 \frame[shrink]{
@@ -178,7 +180,7 @@
             \begin{block}{SPARQL}
                 \begin{alert}{Performance:}
                     Timeout for graphs above 20M triples.
-                \end{alert} 
+                \end{alert}
                 \\
                 \begin{alert}{Pros:}
                     Leverage endpoint for optimizing queries.
@@ -193,7 +195,7 @@
             \begin{block}{MapReduce}
                 \begin{alert}{Performance:}
                     Scale to large graphs up to 50B triples.
-                \end{alert} 
+                \end{alert}
                 \\
                 \begin{alert}{Pros:}
                     More possiblities for optimisations.
@@ -206,4 +208,4 @@
         \end{columns}
     }
 }
-%% vim: et:sw=4
+% vim: et:sw=4
